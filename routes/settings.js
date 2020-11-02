@@ -7,7 +7,7 @@ router.get("/", (request, response, next) => {
 		response.json(settings)
 	}, (error) => {
 		console.log(error)
-		response.sendStatus(400)
+		response.sendStatus(error.errno || 400)
     })
 })
 
@@ -17,7 +17,7 @@ router.post("/", (request, response, next) => {
 		response.json(settings)
 	}, (error) => {
 		console.log(error)
-		response.sendStatus(400)
+		response.sendStatus(error.errno || 400)
 	});	
 });
 
